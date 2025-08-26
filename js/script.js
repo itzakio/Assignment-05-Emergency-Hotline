@@ -22,11 +22,12 @@ document.getElementById("all-cards")
     if(copyBtn === true){
         
         const copyCount = Number(getElement("copy-count").innerText);
-        const copyText = getElement("copy-btn-id").parentNode.parentNode.childNodes[1].innerText;
+        const copyText = e.target.parentNode.parentNode.childNodes[1].innerText;
+        console.log(copyText);
         navigator.clipboard.writeText(copyText);
         const newCopyCount = copyCount + 1;
         getElement("copy-count").innerText = newCopyCount;
-        alert(`Contact Number copied ${copyText}`);
+        alert(`Contact Number copied - ${copyText}`);
     }
 })
 
@@ -55,7 +56,7 @@ document.getElementById("all-cards")
             
             const div = document.createElement("div");
             div.innerHTML = `
-                 <div class="p-4 rounded-lg bg-gray-100 space-y-2">
+                 <div class="p-4 rounded-lg bg-gray-100 space-y-2 mb-2">
                     <div class="flex justify-between">
                         <h3 class="text-lg font-semibold">${cardTitle}</h3>
                         <div class="size-8 bg-red-100 flex justify-center items-center rounded-md">
@@ -72,4 +73,10 @@ document.getElementById("all-cards")
         }
         
     }
+})
+
+// clear history tab functionality
+document.getElementById("clear-btn")
+.addEventListener("click", function(){
+    getElement("call-history-container").innerText = "";
 })
