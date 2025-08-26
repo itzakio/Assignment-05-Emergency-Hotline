@@ -40,13 +40,48 @@
     <main class="w-11/12 mx-auto grid grid-cols-4 gap-8 mt-12">
         <!-- All emergency contact section start -->
         <section class="grid grid-cols-3 gap-8 col-span-3 ">
-            
+            <!-- card 1 -->
+            <div class="contact-card p-8 bg-white rounded-xl">
+                <div class="flex justify-between items-center">
+                    <div class="size-16 bg-red-100 flex justify-center items-center rounded-2xl">
+                        <img class="w-8" src="./assets/emergency.png" alt="">
+                    </div>
+                    <i class="fa-regular fa-heart text-2xl hover:text-red-600 duration-300 ease-in-out"></i>
+                </div>
+                <h3 class="hind-madurai-font text-2xl font-bold mt-4">National Emergency Number</h3>
+                <p class="inter-font text-base text-gray-500">National Emergency</p>
+                <p class=" hind-madurai-font text-3xl font-bold mt-6">999</p>
+                <div class="flex">
+                    <p class="py-1 px-5 rounded-3xl inter-font text-lg text-gray-500 bg-gray-300">All</p>
+                </div>
+                <div class="flex gap-3 mt-6">
+                    <button id="copy-btn" class="border-1 border-gray-400 rounded-lg py-2 w-full hover:bg-green-600 hover:text-white duration-300 ease-in-out"><i class="fa-solid fa-copy"></i> Copy</button>
+                    <button id="call-btn" class="border-1 border-gray-400 rounded-lg py-2 w-full hover:bg-green-600 hover:text-white duration-300 ease-in-out"><i class="fa-solid fa-phone"></i> Call</button>
+                </div>
+            </div>
 
         </section>
         <!-- All emergency contact section end --> 
         <!-- Call History section start -->
-        <section class="bg-purple-500">
-            Call history
+        <section class="bg-white rounded-xl p-6 inter-font">
+            <div class="flex justify-between items-center ">
+                <h3><i class="fa-solid fa-clock"></i> Call History</h3>
+                <button id="call-btn" class="w-24 text-white rounded-3xl py-2 bg-green-600 hover:bg-green-700  duration-300 ease-in-out">Clear</button>
+            </div>
+            <div id="call-history-container" class="mt-4">
+                <div class="p-4 rounded-lg bg-gray-100">
+                    <div class="flex justify-between">
+                        <h3 class="text-lg font-semibold">National Emergency Number</h3>
+                        <div class="size-8 bg-red-100 flex justify-center items-center rounded-md">
+                            <img class="size-4 " src="./assets/emergency.png" alt="">
+                        </div>
+                    </div>
+                    <div class="flex justify-between">
+                        <p>999</p>
+                        <p>11:36:58 AM</p>
+                    </div>
+                </div>
+            </div>
         </section>
         <!-- Call History section end -->       
     </main>
