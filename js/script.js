@@ -22,7 +22,7 @@ document.getElementById("all-cards")
     if(copyBtn === true){
         
         const copyCount = Number(getElement("copy-count").innerText);
-        const copyText = getElement("copy-btn-id").parentNode.parentNode.childNodes[7].innerText
+        const copyText = getElement("copy-btn-id").parentNode.parentNode.childNodes[1].innerText;
         navigator.clipboard.writeText(copyText);
         const newCopyCount = copyCount + 1;
         getElement("copy-count").innerText = newCopyCount;
@@ -33,9 +33,9 @@ document.getElementById("all-cards")
 // call button functionality
 document.getElementById("all-cards")
 .addEventListener("click", function(e){
-    const cardImg = e.target.parentNode.parentNode.childNodes[1].childNodes[1].childNodes[1].src;
-    const cardTitle = e.target.parentNode.parentNode.childNodes[3].innerText;
-    const cardContact = e.target.parentNode.parentNode.childNodes[7].innerText;
+    const cardImg = e.target.parentNode.parentNode.parentNode.childNodes[1].childNodes[1].childNodes[1].childNodes[1].src;
+    const cardTitle = e.target.parentNode.parentNode.parentNode.childNodes[1].childNodes[3].innerText;
+    const cardContact = e.target.parentNode.parentNode.parentNode.childNodes[3].childNodes[1].innerText;
     const time = new Date().toLocaleTimeString()
     const historyContainer = getElement("call-history-container")
 
@@ -55,7 +55,7 @@ document.getElementById("all-cards")
             
             const div = document.createElement("div");
             div.innerHTML = `
-                 <div class="p-4 rounded-lg bg-gray-100">
+                 <div class="p-4 rounded-lg bg-gray-100 space-y-2">
                     <div class="flex justify-between">
                         <h3 class="text-lg font-semibold">${cardTitle}</h3>
                         <div class="size-8 bg-red-100 flex justify-center items-center rounded-md">
@@ -69,7 +69,6 @@ document.getElementById("all-cards")
                 </div>
             `
             historyContainer.appendChild(div);
-            console.log(div.innerHTML);
         }
         
     }
