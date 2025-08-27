@@ -12,6 +12,7 @@ document.getElementById("all-cards")
         const heartCount = Number(getElement("heart-count").innerText);
         const newCount = heartCount + 1;
         getElement("heart-count").innerText = newCount;
+        getElement("heart-count-2").innerText = newCount;
     }
 })
 
@@ -27,6 +28,7 @@ document.getElementById("all-cards")
         navigator.clipboard.writeText(copyText);
         const newCopyCount = copyCount + 1;
         getElement("copy-count").innerText = newCopyCount;
+        getElement("copy-count-2").innerText = newCopyCount;
         alert(`Contact Number copied - ${copyText}`);
     }
 })
@@ -37,20 +39,21 @@ document.getElementById("all-cards")
     const cardImg = e.target.parentNode.parentNode.parentNode.childNodes[1].childNodes[1].childNodes[1].childNodes[1].src;
     const cardTitle = e.target.parentNode.parentNode.parentNode.childNodes[1].childNodes[3].innerText;
     const cardContact = e.target.parentNode.parentNode.parentNode.childNodes[3].childNodes[1].innerText;
-    const time = new Date().toLocaleTimeString()
-    const historyContainer = getElement("call-history-container")
-
-    const callBtn = e.target.className.includes("call-btn")
+    const time = new Date().toLocaleTimeString();
+    const historyContainer = getElement("call-history-container");
+    const historyContainer2 = getElement("call-history-container-2");
+    const callBtn = e.target.className.includes("call-btn");
     if(callBtn === true){
         const coins = Number(getElement("coins").innerText);
         if (coins < 20){
-            alert("You do not have enough coins to call")
+            alert("You do not have enough coins to call");
         }
         else{
             // calling functionality 
             const newCoinCount = coins - 20;
             getElement("coins").innerText = newCoinCount;
-            alert(`📞 Calling ${cardTitle} - ${cardContact}`)
+            getElement("coins-2").innerText = newCoinCount;
+            alert(`📞 Calling ${cardTitle} - ${cardContact}`);
             
             // history functionality
             
@@ -69,14 +72,38 @@ document.getElementById("all-cards")
                     </div>
                 </div>
             `
+            const divClone = div.cloneNode(true);
             historyContainer.appendChild(div);
+            historyContainer2.appendChild(divClone);
         }
         
     }
 })
 
+
+
+
 // clear history tab functionality
 document.getElementById("clear-btn")
 .addEventListener("click", function(){
     getElement("call-history-container").innerText = "";
+    getElement("call-history-container-2").innerText = "";
+
+})
+document.getElementById("clear-btn-2")
+.addEventListener("click", function(){
+    getElement("call-history-container").innerText = "";
+    getElement("call-history-container-2").innerText = "";
+
+})
+
+// sidebar functionality
+document.getElementById("manu-open")
+.addEventListener("click", function(){
+    getElement("sidebar").style.display = "block"
+})
+
+document.getElementById("close")
+.addEventListener("click", function(){
+    getElement("sidebar").style.display = "none"
 })
