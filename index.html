@@ -44,14 +44,14 @@
 
         <!-- side bar start -->
          
-        <aside id="sidebar" class="hidden w-96 h-dvh fixed top-0 right-0 z-20 bg-white rounded-xl p-6 inter-font shadow-sm ">
+        <aside id="sidebar" class="hidden w-96 h-dvh fixed top-0 right-0 z-20 bg-white  rounded-xl p-6 inter-font shadow-sm ">
             <div  class="flex justify-end w-full">
-            <div id="close" class="w-6 "><img class="w-full mr-0 pb-4 pr-2" src="./assets/close.png" alt=""></div>
+            <div id="close" class="w-6 mr-1 mt-3 "><img class="w-full mr-0 pb-4 pr-2" src="./assets/close.png" alt=""></div>
             </div>
 
             <div class="flex md:hidden items-center gap-4 mb-3">
                 <div class="w-28 py-3 rounded-full bg-green-200 flex items-center justify-center gap-2"><span id="heart-count-2" class="inter-font font-black">0</span><img class="w-7" src="./assets/heart.png" alt="heart"></div>
-                <div class="w-28 py-3 rounded-full bg-green-200 flex items-center justify-center gap-2"><span id="coins-2" class="inter-font font-black">100</span><img class="w-7" src="./assets/coin.png" alt="heart"></div>
+                <div class="w-28 py-3 rounded-full bg-green-200 flex items-center justify-center gap-2"><span id="coins-2" class="inter-font font-black">0</span><img class="w-7" src="./assets/coin.png" alt="heart"></div>
                 <div class="w-28 py-3 rounded-full bg-green-600 flex items-center justify-center gap-2 text-white"><span id="copy-count-2" class="inter-font font-semibold">0</span> <span class="inter-font font-semibold">Copy</span></div>
             </div>
            
@@ -59,7 +59,7 @@
                 <h3><i class="fa-solid fa-clock"></i> Call History</h3>
                 <button id="clear-btn-2" class="clear-btn w-24 text-white rounded-3xl py-2 bg-green-600 hover:bg-green-700  duration-300 ease-in-out">Clear</button>
             </div>
-            <div id="call-history-container-2" class="mt-4 flex flex-col-reverse">
+            <div id="call-history-container-2" class="mt-4 h-dvh flex flex-col-reverse overflow-scroll">
 
                 <!-- html input from js -->
 
@@ -69,7 +69,7 @@
     </header>
     <!-- Header section end -->
     <!-- Main section start -->
-    <main class="w-11/12 max-w-[1700px] mx-auto grid grid-cols-1 xl:grid-cols-4 gap-8 mt-12 pb-12">
+    <main class="w-11/12 max-w-[1700px] mx-auto grid grid-cols-1 xl:grid-cols-4 gap-8 mt-12 pb-12 relative">
         <!-- All emergency contact section start -->
         <section id="all-cards" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 col-span-1 xl:col-span-3 ">
             <!-- card 1 -->
@@ -133,7 +133,7 @@
                 <p class="inter-font text-base text-gray-500">Fire Service</p>
                 </div>
                 <div>
-                    <p class=" hind-madurai-font text-3xl font-bold mt-6 ">999</p>
+                    <p class=" hind-madurai-font text-3xl font-bold mt-6 ">102</p>
                 <div class="flex">
                     <p class="py-1 px-5 rounded-3xl inter-font text-lg text-gray-500 bg-gray-300">Fire</p>
                 </div>
@@ -294,14 +294,14 @@
         </section>
         <!-- All emergency contact section end --> 
         <!-- Call History section start -->
-        <section class="bg-white rounded-xl p-6 inter-font shadow-sm col-span-1 hidden md:block">
+        <section class=" bg-white rounded-xl p-6 inter-font shadow-sm col-span-1 col-start-4  overflow-auto ">
            
             <div class="flex justify-between items-center ">
                 <h3><i class="fa-solid fa-clock"></i> Call History</h3>
                 <button id="clear-btn" class="clear-btn w-24 text-white rounded-3xl py-2 bg-green-600 hover:bg-green-700  duration-300 ease-in-out">Clear</button>
+                
             </div>
-            <div id="call-history-container" class="mt-4 flex flex-col-reverse">
-
+            <div id="call-history-container" class="my-4 flex flex-col-reverse ">
                 <!-- html input from js -->
 
             </div>

@@ -24,7 +24,6 @@ document.getElementById("all-cards")
         
         const copyCount = Number(getElement("copy-count").innerText);
         const copyText = e.target.parentNode.parentNode.childNodes[1].innerText;
-        console.log(copyText);
         navigator.clipboard.writeText(copyText);
         const newCopyCount = copyCount + 1;
         getElement("copy-count").innerText = newCopyCount;
@@ -32,6 +31,10 @@ document.getElementById("all-cards")
         alert(`Contact Number copied - ${copyText}`);
     }
 })
+
+// coin copy
+const coinCount = getElement("coins").innerText;
+getElement("coins-2").innerText = coinCount;
 
 // call button functionality
 document.getElementById("all-cards")
