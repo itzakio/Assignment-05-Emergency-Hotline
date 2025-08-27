@@ -9,11 +9,13 @@
     <link rel="stylesheet" href="./css/style.css">
     <title>Emergency-Hotline</title>
 </head>
-<body class="min-h-dvh bg-green-50">
+<body class="min-h-dvh bg-green-50 relative">
+    
     <!-- Header section start -->
-    <header class="bg-white">
+    <header class="bg-white ">
         <!-- Navbar section start -->
-        <nav class="h-24 flex justify-between items-center w-11/12 mx-auto ">
+         <nav class="w-full flex items-center bg-white fixed ">
+            <div class=" py-4 flex flex-col md:flex-row justify-between items-center gap-3 w-11/12 mx-auto sticky top-0">
             <div class="flex items-center gap-2">
                 <img class="w-12 h-12" src="./assets/logo.png" alt="logo">
                 <h2 class="text-xl font-bold text-green-800">Emergency <br> Service</h2>
@@ -24,22 +26,24 @@
                 <div class="w-28 py-3 rounded-full bg-green-600 flex items-center justify-center gap-2 text-white"><span id="copy-count" class="inter-font font-semibold">0</span> <span class="inter-font font-semibold">Copy</span></div>
                 
             </div>
-        </nav>
+            </div> 
+         </nav>
+        
         <!-- Navbar section end -->
         
         <!-- Hero section start -->
-        <section class="flex flex-col items-center justify-center gap-3 py-5 bg-gradient-to-r from-[#013223] via-[#006747] to-[#013223]">
+        <section class="pt-44 md:pt-28 xl:pt-26 flex flex-col items-center justify-center gap-3 py-5 bg-gradient-to-r from-[#013223] via-[#006747] to-[#013223]">
             <img class="w-20" src="./assets/logo-dark.png" alt="logo">
-            <h1 class="hind-madurai-font text-[2.5rem] font-bold text-white">Emergency Service Directory</h1>
-            <p class="hind-madurai-font text-xl font-semibold text-white">Government Emergency Services at Your Fingertip – A Project by  Government of the People’s Republic of Bangladesh</p>
+            <h1 class="hind-madurai-font text-2xl xl:text-[2.5rem] font-bold text-center text-white">Emergency Service Directory</h1>
+            <p class="hind-madurai-font text-base xl:text-xl font-semibold text-center text-white px-3 xl:px-0">Government Emergency Services at Your Fingertip – A Project by  Government of the People’s Republic of Bangladesh</p>
         </section>
         <!-- Hero section end -->
     </header>
     <!-- Header section end -->
     <!-- Main section start -->
-    <main class="w-11/12 mx-auto grid grid-cols-4 gap-8 mt-12">
+    <main class="w-11/12 mx-auto grid grid-cols-1 xl:grid-cols-4 gap-8 mt-12 ">
         <!-- All emergency contact section start -->
-        <section id="all-cards" class="grid grid-cols-3 gap-8 col-span-3 ">
+        <section id="all-cards" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 col-span-1 xl:col-span-3 ">
             <!-- card 1 -->
             <div class="contact-card p-8 bg-white rounded-xl flex flex-col justify-between shadow-sm">
                 <div>
@@ -260,7 +264,8 @@
         </section>
         <!-- All emergency contact section end --> 
         <!-- Call History section start -->
-        <section class="bg-white rounded-xl p-6 inter-font shadow-sm ">
+        <section class="bg-white rounded-xl p-6 inter-font shadow-sm xl:col-span-1 row-start-1 xl:row-start-1 xl:col-start-4 ">
+           
             <div class="flex justify-between items-center ">
                 <h3><i class="fa-solid fa-clock"></i> Call History</h3>
                 <button id="clear-btn" class="w-24 text-white rounded-3xl py-2 bg-green-600 hover:bg-green-700  duration-300 ease-in-out">Clear</button>
