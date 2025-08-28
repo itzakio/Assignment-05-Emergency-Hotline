@@ -110,3 +110,4 @@ document.getElementById("close")
 .addEventListener("click", function(){
     getElement("sidebar").style.display = "none"
 })
+
