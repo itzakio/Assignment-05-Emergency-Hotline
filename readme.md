@@ -4,49 +4,65 @@
 
 **Answer:** These three are DOM element selector. The purpose is same, but there are some major difference.
 
-**getElementById:** This element selector select one element with the matching ID. Each id should be unique on the page or it will select only first element with the matching ID. If no element found on that ID, it will return null.
+- **getElementById:** This element selector select one element with the matching ID. Each id should be unique on the page or it will select only first element with the matching ID. If no element found on that ID, it will return null.
 
 **Example:**
-< div id ="container">
-  < div id= "box-1" class = "box">< /div>
-  < div id= "box-2" class = "box">< /div>
-< /div>
-
+```html
+<div id ="container">
+  <div id= "box-1" class = "box"></div>
+  <div id= "box-2" class = "box"></div>
+</div>
+```
+```javascript
 const el = document.getElementById("container");
 console.log("el");
+```
 
-**getElementsByClassName:** This element selector select one or multiple element with the matching Class Name. It returns live HTMLCollection. If DOM changes like adding or removing the elements. The elements updates automatically.
+- **getElementsByClassName:** This element selector select one or multiple element with the matching Class Name. It returns live HTMLCollection. If DOM changes like adding or removing the elements. The elements updates automatically.
 
 **Example:**
-< div id ="container">
-  < div id= "box-1" class = "box">< /div>
-  < div id= "box-2" class = "box">< /div>
-< /div>
+```html
+<div id ="container">
+  <div id= "box-1" class = "box"></div>
+  <div id= "box-2" class = "box"></div>
+</div>
+```
 
+```javascript
 const elements = document.getElementsByClassName("box");
 console.log("elements");
+```
 
-**querySelector:** This element selector select one element with the matching css selector. It will select only first element with the matching css selector. If no element found on that css selector, it will return null.
+- **querySelector:** This element selector select one element with the matching css selector. It will select only first element with the matching css selector. If no element found on that css selector, it will return null.
 
 **Example:**
-< div id ="container">
-  < div id= "box-1" class = "box">< /div>
-  < div id= "box-2" class = "box">< /div>
-< /div>
+```html
+<div id ="container">
+  <div id= "box-1" class = "box"></div>
+  <div id= "box-2" class = "box"></div>
+</div>
+```
 
+```javascript
 const el = document.getElementById("#box-1");
 console.log("el");
+```
 
-**querySelectorAll:** This element selector select one or multiple element with the matching css selector. It returns NodeList of matching css selector. NodeList is an array like object, So we can loop through the NodeList.
+- **querySelectorAll:** This element selector select one or multiple element with the matching css selector. It returns NodeList of matching css selector. NodeList is an array like object, So we can loop through the NodeList.
 
 **Example:**
-< div id ="container">
-  < div id= "box-1" class = "box">< /div>
-  < div id= "box-2" class = "box">< /div>
-< /div>
 
+```html
+<div id ="container">
+  <div id= "box-1" class = "box"></div>
+  <div id= "box-2" class = "box"></div>
+</div>
+```
+
+```javascript
 const elements = document.getElementsByClassName(".box");
 console.log("elements");
+```
 
 ---
 
@@ -54,21 +70,34 @@ console.log("elements");
 
 **Answer:** The steps to create and insert a new element into the DOM:
 
-**Step-1:** Get the parent container from the DOM, Where the child container will be inserted.
+- **Step-1:** Get the parent container from the DOM, Where the child container will be inserted.
 **Example:**
-< div id ="parent-container">
+```html
+<div id ="parent-container">
  
-< /div>
+</div>
+```
+```javascript
 const parentContainer = document.getElementById("parent-container");
+```
 
-**Step-2:** Create a child container to set the inner HTML:
-Example: const childContainer = document.createElement("div");
+- **Step-2:** Create a child container to set the inner HTML:
+Example: 
+```javascript
+const childContainer = document.createElement("div");
+```
 
-**Step-3:** Set the inner HTML:
-Example: childContainer.innerHTML = `<h1> Helle Programming Hero </h1>`
+- **Step-3:** Set the inner HTML:
+Example: 
+```javascript
+childContainer.innerHTML = `<h1> Helle Programming Hero </h1>`
+```
 
-**Step-4:** Append the child container into parent container:
-Example: parentContainer.appendChild(childContainer);
+- **Step-4:** Append the child container into parent container:
+Example: 
+```javascript
+parentContainer.appendChild(childContainer);
+```
 
 ---
 
@@ -76,14 +105,15 @@ Example: parentContainer.appendChild(childContainer);
 
 **Answer:** Event Bubbling is a main feature of HTML DOM. If you click on element in web page, the element triggered the event and also propagates upward through its parent to ancestor way up to document.
 **Example:** 
-< div id="parent-container">
-  < div id="child-container">
-    < button id="btn"> < /button>
-  < /div>
-< /div>
+```html
+<div id="parent-container">
+  <div id="child-container">
+    <button id="btn"> </button>
+  </div>
+</div>
+```
 
-< script>
-
+```javascript
 document.getElementById("btn").addEventListener("click", function() {
     console.log("Button Clicked");
 });
@@ -95,8 +125,8 @@ document.getElementById("child-container").addEventListener("click", function() 
 document.getElementById("parent-container").addEventListener("click", function() {
     console.log("Parent Container Clicked");
 });
+```
 
-< /script>
 
 If you clicked on the button who has id of **btn** it will also triggered the event for the parent way up to ancestor elements. So the output will be:
 Button Clicked
@@ -111,33 +141,37 @@ Parent Container Clicked
 
 ### 4. What is **Event Delegation** in JavaScript? Why is it useful?
 
-**Answer:** Event Delegation is a technique used to triggered event by using DOM Event Bubbling features. In this technique the EventListener set only in the parent element. And for the bubbling feature parent element can identify witch element is triggering the event by the help of DOM element selectors.
+**Answer:** 
+**Event Delegation:** Event Delegation is a technique used to triggered event by using DOM Event Bubbling features. In this technique the EventListener set only in the parent element. And for the bubbling feature parent element can identify witch element is triggering the event by the help of DOM element selectors.
 
 **Example:**
-< div id="card-container">
-  //card - 1
-  < div id="card-1">
-    < h1>Card - 1< /h1>
-    < button class="btn"> < /button>
-  < /div>
+```html
+<div id="card-container">
+  <!-- card - 1 -->
+  <div id="card-1">
+    <h1>Card - 1</h1>
+    <button class="btn"> </button>
+  </div>
 
-  //card - 2
-  < div id="card-2">
-    < h1>Card - 2< /h1>
-    < button class="btn"> < /button>
-  < /div>
+  <!-- card - 2 -->
+  <div id="card-2">
+    <h1>Card - 2</h1>
+    <button class="btn"> </button>
+  </div>
 
-  // card - 3
-  < div id="card-3">
-    < h1>Card - 3< /h1>
-    < button class="button"> < /button>
-  < /div>
-< /div>
+  <!-- card - 3 -->
+  <div id="card-3">
+    <h1>Card - 3</h1>
+    <button class="button"> </button>
+  </div>
+</div>
+```
 
-< script>
-  document.getElementById("card-container").addEventListener("click", function(e) {
+```javascript
+document.getElementById("card-container").addEventListener("click", function(e) {
       // get the card title
       const cardTitle = e.target.parentNode.childNodes[1].innerText;
+
       // get the element witch one you clicked for triggered the event
       const cardBtn = e.target.className.includes("btn");
 
@@ -146,7 +180,7 @@ Parent Container Clicked
         Console.log(`${cardTitle} is clicked`);
       }
   });
-< /script>
+```
 
 If you clicked on card-1 and card-2 button. It will show output. Because it's includes the classname **btn**. The output will be:
 Card - 1 is clicked
@@ -154,36 +188,45 @@ Card - 2 is clicked
 
 If you clicked on card-3 button. It will not show any output. Because it don't includes the classname **btn**.
 
+- **The reason why is Event Delegation useful:**
+1. Performance: In Event Delegation we can use only one EventListener to the parent and can handel hundreds of child element event. The code is less so it takes less memory and load faster.
+2. Dynamic Content: If a new child added with the same class or id name also works. No need to right code for new child.
+3. Cleaner Code: The code is less, so it looks clean and easy to maintain.
+
 ---
 
 ### 5. What is the difference between **preventDefault() and stopPropagation()** methods?
 
 **Answer:**
-**preventDefault():** Stops the default action of an element from happening like stops a link < a> from navigating, stops a form from submitting and stops right-click from opening context menu.
+- **preventDefault():** Stops the default action of an element from happening like stops a link < a> from navigating, stops a form from submitting and stops right-click from opening context menu.
 
 **Example:**
-< form>
-  < input type="text">
-  < button id="btn"> Submit < /button>
-< /form>
+```html
+<form>
+  <input type="text" placeholder = "write something">
+  <button id="btn"> Submit </button>
+</form>
+```
 
-< script>
-  document.getElementById("btn").addEventListener("click", function(e){
-    e.preventDefault();
-    console.log("submit button clicked")
-  })
-< /script>
+```javascript
+document.getElementById("btn").addEventListener("click", function(e){
+  e.preventDefault();
+  console.log("submit button clicked")
+})
+```
 
 The default behavior form is if their any button inside the form and it clicked, form reload the page. The **preventDefault()** stop that behavior of form.
 
-**stopPropagation():** Stops the event from bubbling from the target element to their parent. If you use the **stopPropagation()** to the child element EventListener the parent can't hear the bubbling.
+- **stopPropagation():** Stops the event from bubbling from the target element to their parent. If you use the **stopPropagation()** to the child element EventListener the parent can't hear the bubbling.
 
 **Example:**
-< div id="parent">
-  < button id="child">Click Me< /button>
-< /div>
+```html
+<div id="parent">
+  <button id="child">Click Me</button>
+</div>
+```
 
-< script>
+```javascript
   document.getElementById("child").addEventListener("click", function(e) {
   e.stopPropagation(); // stops bubbling
   console.log("Button clicked");
@@ -192,7 +235,7 @@ The default behavior form is if their any button inside the form and it clicked,
   document.getElementById("parent").addEventListener("click", () => {
   console.log("Parent clicked");
 });
-< /script>
+```
 
 If the **stopPropagation()** was not used in this EventListener and we clicked the button, the output will be:
 Button clicked
@@ -200,4 +243,3 @@ Parent clicked
 
 And for using the **stopPropagation()** used in this EventListener and we clicked the button parent can't hear the event and the output is:
 Button clicked
-
